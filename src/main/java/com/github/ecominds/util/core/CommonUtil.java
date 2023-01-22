@@ -41,10 +41,10 @@ public class CommonUtil {
 		}
 		return str.trim();
 	}
-	
+	private static final String REGEX_NUMBER = "[0-9]+";
 	public static String trimNum(String numStr){
 		numStr = trim(numStr);
-		if(numStr.matches("[0-9]+")){
+		if(numStr.matches(REGEX_NUMBER)){
 			return numStr;
 		}
 		return "-1";
