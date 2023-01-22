@@ -1,0 +1,94 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.github.ecominds</groupId>
+	<artifactId>common-util</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>common-util</name>
+	<description>A java plugin for common utility methods</description>
+
+	<packaging>pom</packaging>
+	<inceptionYear>2023</inceptionYear>
+
+	<properties>
+		<commons.encoding>UTF-8</commons.encoding>
+		<jdk-version>1.8</jdk-version>
+
+		<project.build.sourceEncoding>${commons.encoding}</project.build.sourceEncoding>
+		<project.build.resourceEncoding>${commons.encoding}</project.build.resourceEncoding>
+		<project.reporting.outputEncoding>${commons.encoding}</project.reporting.outputEncoding>
+
+<!--
+		<maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
+		<maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+-->
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+
+		<junit.version>4.13.2</junit.version>
+		<slf4j-version>2.0.6</slf4j-version>
+	</properties>
+
+	<developers>
+		<developer>
+			<name>Rajiv Kumar</name>
+			<email>rajiv3124@gmail.com</email>
+			<url>https://rajiv7.github.io/</url>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:git://github.com/ecominds/common-util.git</connection>
+		<developerConnection>scm:git:git@github.com:ecominds/common-util.git</developerConnection>
+		<url>https://github.com/ecominds/common-util</url>
+	</scm>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
+<!--
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-version}</version>
+		</dependency>
+	</dependencies>
+-->
+	<build>
+
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+	</build>
+</project>
